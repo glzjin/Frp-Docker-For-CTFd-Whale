@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  frps:
+    image: glzjin/frp:latest
+    restart: always
+    volumes:
+      - ./frp:/conf/
+    entrypoint:
+        - /usr/local/bin/frps
+        - -c
+        - /conf/frps.ini
+    ports:
+      - "28000-28100:28000-28100"
+      - "6490:6490"
+    networks:
+        default:
+
+networks:
+    default:
