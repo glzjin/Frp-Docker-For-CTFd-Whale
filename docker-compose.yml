@@ -10,9 +10,4 @@ services:
         - /usr/local/bin/frps
         - -c
         - /conf/frps.ini
-    networks:
-        frp_host:
-
-networks:
-    frp_host:
-        driver: host
+    network_mode: host
