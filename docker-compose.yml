@@ -10,12 +10,9 @@ services:
         - /usr/local/bin/frps
         - -c
         - /conf/frps.ini
-    ports:
-      - "28000-28100:28000-28100"
-      - "80:80"
-      - "6490:6490"
     networks:
-        default:
+        frp_host:
 
 networks:
-    default:
+    frp_host:
+        driver: host
